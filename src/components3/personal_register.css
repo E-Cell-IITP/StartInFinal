@@ -31,6 +31,9 @@
     padding:20px 10px;
     background-color:rgba(34, 21, 218, 0.256);
 }
+.headingis{
+    cursor: pointer;
+}
 .firstname{
     text-align: left ;
     width: 90%;

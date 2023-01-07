@@ -26,7 +26,7 @@ const Personal_Register = () => {
   // });
     try{
 
-    result=await axios.post("https://ecell-startin-backend.onrender.com/users/register",
+    result = await axios.post("https://ecell-startin-backend.onrender.com/users/register",
     item,{
     headers: { 
       'Content-Type': 'application/json',
@@ -34,31 +34,30 @@ const Personal_Register = () => {
       'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE',
       'Access-Control-Allow-Headers': 'Content-Type',
       'Access-Control-Allow-Credentials': true
-    }}
+    }})
     // headers:{
     //   "Content-Type":'application/json',
     //   "Accept":'application/json'
     // }
-  );
     }catch(err){
-      console.log(err);
+      console.log(err.response.data.message);
     } 
 
     // result=await result.json();
-    setFirstName("");
-    setEmail("");
-    setUsername("");
-    setPhone("");
-    setPassword("");
-    setLastName("");
+    // setFirstName("");
+    // setEmail("");
+    // setUsername("");
+    // setPhone("");
+    // setPassword("");
+    // setLastName("");
     console.log(result);
-    window.location='/'
+    // window.location='/'
   }
   return (
     <div className='loginhead'>
       <div className='navcontain1'>
        <div className="top1">
-        <span className="headingis">Start-In</span>
+        <span className="headingis" onClick={()=>{window.location = '/'}}>Start-In</span>
        </div>
       </div>
       <div className="loginbox">
