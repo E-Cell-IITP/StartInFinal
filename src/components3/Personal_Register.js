@@ -44,15 +44,15 @@ const Personal_Register = () => {
       console.log(err);
     } 
 
-    result=await result.json();
-    // setFirstName("");
-    // setEmail("");
-    // setUsername("");
-    // setPhone("");
-    // setPassword("");
-    // setLastName("");
+    // result=await result.json();
+    setFirstName("");
+    setEmail("");
+    setUsername("");
+    setPhone("");
+    setPassword("");
+    setLastName("");
     console.log(result);
-    // window.location='/'
+    window.location='/'
   }
   return (
     <div className='loginhead'>
