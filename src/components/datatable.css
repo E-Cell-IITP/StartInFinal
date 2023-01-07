@@ -1,0 +1,41 @@
+.conttable{
+    height: 320px;
+    /* width: 100px; */
+    width: 85% !important;
+    margin-top: 10px;
+    overflow-y: hidden !important;
+    border-radius: 0 !important;
+}
+.headtable{
+ display: flex;
+ justify-content: center;
+}
+.conttable{
+    /* background: linear-gradient(111.03deg, rgba(239, 238, 238, 0.32) 2.82%, rgba(239, 238, 238, 0.06) 90.94%);
+backdrop-filter: blur(20px); */
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 10px !important;
+}
+.cell{
+    /* background: linear-gradient(111.03deg, rgba(239, 238, 238, 0.32) 2.82%, rgba(239, 238, 238, 0.06) 90.94%) !important;
+    backdrop-filter: blur(2px) !important;  */
+    line-height: 20px !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    font-family: 'M PLUS 1' !important;
+    font-style: normal !important;
+    /* background-color: yellowgreen !important; */
+    /* width: 40% !important; */
+}
+.cell1{
+    /* background: linear-gradient(111.03deg, rgba(239, 238, 238, 0.32) 2.82%, rgba(239, 238, 238, 0.06) 90.94%) !important;
+    backdrop-filter: blur(2px) !important;  */
+    line-height: 20px !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    font-family: 'M PLUS 1' !important;
+    font-style: normal !important;
+    /* background-color: rgb(39, 26, 105) !important; */
+    width: 10% !important;
+}

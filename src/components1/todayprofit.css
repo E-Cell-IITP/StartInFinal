@@ -1,0 +1,81 @@
+*{
+    margin-right: 0;
+    padding-right: 0;
+}
+.formtodayprofit{
+    text-align: center;
+    display: flex;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+
+}
+.todaycont{
+    width: 80%;
+    height: auto;
+    /* background-color: rgb(126, 230, 126) !important; */
+    display: flex;
+    flex-direction: column;
+    margin: 40px 5px;
+    padding: 10px 5px;
+}
+.uskaname{
+    background-color: rgb(228, 16, 16);
+}
+.uskaamount{
+    background-color: yellow;
+}
+.uskaDate{
+    background-color: rgb(226, 12, 230);
+}
+.uskaRemarks{
+    background-color: palevioletred;
+}
+.namee{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px ;
+    margin: 10px;
+}
+.namebox{
+    padding: 5px 3px;
+    margin: 10px ;
+}
+.comm{
+    margin: 4px  ;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 1px ; */
+   display: flex;
+}
+/* .boxx{
+    width: 40%;
+    margin: 6px 2px;
+    align-items: right;
+} */
+@media only screen and (max-width: 1000px) {
+    .todaycont{
+        width: 80%;
+    }
+    .boxx{
+        width: 40%;
+        align-items: right;
+    }
+  }
+.submitting{
+    align-items: center;
+    text-align: center;
+}
+.submitnow{
+    padding: 8px 10px;
+    background-color: rgb(7, 190, 7);
+    border: none;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.submitnow:hover{
+    scale: 1.02;
+}

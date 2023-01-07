@@ -1,0 +1,143 @@
+.loginhead{
+    width: 100%;
+    padding: 10px;
+    /* background-color:white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+
+}
+.loginbox{
+    margin-top: 20px;
+    width: 60%;
+    min-width: 300px;
+    /* font-size: 30px; */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color:rgb(2, 1, 18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 2px;
+    flex-direction: column;
+    padding: 20px 0 40px 0px;
+}
+.headinglogin{
+    width: 80%;
+    text-align: center;
+    /* font-weight: bold; */
+    font-size: 34px;
+   
+    border-radius: 10px;
+
+    /* color: black; */
+    padding:20px 10px;
+    background-color:rgba(34, 21, 218, 0.256);
+}
+.firstname{
+    text-align: left ;
+    font-size: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding:20px 10px;
+}
+.firstname label{
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.firstname input{
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+    margin-left: 15px;
+    
+}
+.lastname{
+    text-align: left ;
+    width: 90%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+     font-size: 20px;
+    padding:20px 10px;
+}
+.lastname label{
+    /* width: 100%; */
+    padding-left: 15px;
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+.lastname input{
+    padding: 5px;
+    font-weight: lighter;
+    font-size: 20px;
+    margin-left: 15px;
+    border-radius: 10px;
+    width: 90%;
+
+}
+.description{
+    text-align: left ;
+    width: 87%;
+   
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding:20px 10px;
+}
+.description label{
+    padding-left: 15px;
+    font-size: 30px;
+    padding-bottom: 5px;
+}
+/* .description input{
+    margin-left: 15px;
+    border-radius: 10px;
+    
+} */
+.description textarea{
+    border-radius: 10px;
+    border-width: 0;
+    padding: 5px;
+}
+.btn-delete{
+    align-self: center;
+    cursor: pointer;
+    margin: 0 10px;
+    min-height: 40px;
+    /* height: 50px !important; */
+}
+.btn-add{
+    text-align: center ;
+    display: flex;
+    flex-direction: column;
+    padding:10px 15px;
+    width: fit-content;
+    /* padding-left: 15px;
+    padding-bottom: 5px; */
+    /* width: 30%; */
+    min-width: 100px;
+    border-radius: 10px;
+    background-color: rgba(6, 97, 234, 0.826);
+    cursor: pointer;
+
+}
+.submitbutton{
+    margin-top: 30px;
+    background-color:rgba(6, 97, 234, 0.826);
+    padding: 5px 10px ;
+    width: 20%;
+    min-width: 110px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.submitbutton:hover{
+    scale: 1.04;
+}
+.container{
+    height: fit-content;
+}

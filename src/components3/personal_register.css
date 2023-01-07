@@ -1,0 +1,193 @@
+.loginhead{
+    width: 100%;
+    padding: 10px;
+    /* background-color:white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+}
+.loginbox{
+    margin-top: 20px;
+    width: 60%;
+    min-width: 300px;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:rgb(2, 1, 18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 2px;
+    flex-direction: column;
+    padding: 0 0 40px 0px;
+}
+.headinglogin{
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 50px;
+    /* color: black; */
+    padding:20px 10px;
+    background-color:rgba(34, 21, 218, 0.256);
+}
+.firstname{
+    text-align: left ;
+    width: 90%;
+    display: flex;
+    border-radius: 50%;
+    flex-direction: column;
+    padding:20px 10px;
+}
+.firstname label{
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.firstname input{
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 15px;
+}
+.lastname{
+    text-align: left ;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding:20px 10px;
+}
+.lastname label{
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.lastname input{
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 15px;
+}
+.email{
+    text-align: left ;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding:20px 10px;
+}
+.email label{
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.email input{
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 15px;
+}
+.sameone {
+    text-align: left ;
+    width: 90%;
+    border-width: 0;
+    display: flex;
+    font-size: 30px;
+    font-weight: lighter;
+    flex-direction: column;
+    padding:20px 10px;
+}
+.sameone  label{
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.sameone  input{
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.phone{
+    text-align: left ;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding:20px 10px;
+}
+.phone label{
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.phone input{
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 15px;
+}
+.sameone box{
+    text-align: left ;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding:20px 10px;
+}
+.sameone box label{
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.sameone box input{
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 15px;
+}
+.passwordbox{
+    text-align: left ;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    padding:20px 10px;
+}
+.passwordbox label{
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.passwordbox input{
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 15px;
+    
+}
+/* .checkbox1{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-items: center;
+    text-align: left;
+     padding:20px 10px;
+}
+.checkbox1-input{
+    margin: 10px;
+}
+.checkbox1 label{
+    font-size: 20px;
+} */
+.submitbutton{
+    margin-top: 30px;
+    background-color:rgba(6, 97, 234, 0.826);
+    padding: 5px 10px ;
+    width: 80%;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.submitbutton:hover{
+    scale: 1.04;
+}
+.alreadyAcc{
+    background-color:rgba(55, 134, 252, 0.826);
+    padding: 5px 10px ;
+    width: 80%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 25px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.alreadyAcc:hover{
+    scale: 1.04;
+}

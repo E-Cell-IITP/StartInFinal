@@ -1,0 +1,87 @@
+.threebox{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 50px;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    /* justify-content: space-around; */
+}
+
+.boxo{
+    align-items: center;
+    text-align: center;
+    width: 23%;
+    height: 300px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 50px;
+    position: relative;
+}
+.boxo img{
+    height: 300px;
+    border-radius: 40px;
+    width: 100%;
+    /* position: absolute; */
+}
+.textt{
+    color: white;
+    top: 8px;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    left: 10px;
+    top:15%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+.boxo:hover{
+    scale: 1.02;
+}
+.linkk{
+    width: 23%;
+    text-align: center;
+}
+@media only screen and (max-width: 700px) {
+    .threebox {
+        display: flex;
+        flex-direction: column;
+    }
+    .boxo{
+        margin-bottom: 10px;
+        width: 70%;
+        min-width: 300px;
+    }
+    .boxo img{
+        width: 80%;
+    }
+  }
+
+.table{
+    width: 90%;
+    height: 300px;
+    display: flex;
+    margin: auto;
+}
+.table img{
+    width: 100%;
+    height: 100%;
+}
+.board{
+    background-color: white;
+}
+.board{
+    /* width: 25%; */
+    width: fit-content;
+    /* min-width: 200px; */
+    background: #AB183D;
+    margin: 50px 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    padding: 5px 10px;
+ }
