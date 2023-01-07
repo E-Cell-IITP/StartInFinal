@@ -12,8 +12,12 @@ const Personal_Register = () => {
   const [phone,setPhone]=useState("");
   const [password,setPassword]=useState("");
   const [confirmpassword,setConfirmpassword]=useState("");
+  const [toggle,settoggle] = useState(true)
 
   async function funcc(){
+
+    if(password!==""&&FirstName!==""&&LastName!==""&&username!==""&&Email!==""&&phone!==""&&confirmpassword!==""){
+      if(password===confirmpassword){
     let item={FirstName: FirstName,LastName: LastName,username: username,phone: parseInt(phone),Email: Email,password: password};
     // const body = JSON.stringify(item);
     let result = {};
@@ -40,19 +44,47 @@ const Personal_Register = () => {
     //   "Accept":'application/json'
     // }
   );
+  // setFirstName("");
+    // setEmail("");
+    // setUsername("");
+    // setPhone("");
+    // setPassword("");
+    // setConfirmpassword("");
+    // setLastName("");
+
+    console.log(result);
+    var x=result.data.message;
+    window.alert(x);
+    settoggle(true)
+    window.location='/'
     }catch(err){
+      var g=err.response.data.message;
+      window.alert(g);
       console.log(err);
+      settoggle(true)
     } 
 
     // result=await result.json();
-    setFirstName("");
-    setEmail("");
-    setUsername("");
-    setPhone("");
-    setPassword("");
-    setLastName("");
-    console.log(result);
-    window.location='/'
+    // setFirstName("");
+    // setEmail("");
+    // setUsername("");
+    // setPhone("");
+    // setPassword("");
+    // setConfirmpassword("");
+    // setLastName("");
+
+    // console.log(result);
+    // var x=result.data.message;
+    // window.alert(x);
+    // window.location='/'
+  }
+
+  else{
+    window.alert("password doesn't match");
+    settoggle(true)
+  }
+}
+
   }
   return (
     <div className='loginhead'>
@@ -92,7 +124,10 @@ const Personal_Register = () => {
                 <input value={confirmpassword} onChange={(e)=>setConfirmpassword(e.target.value)} type="password" placeholder='Confirm password'/>
             </div>
            
-          <div  onClick={funcc} className="submitbutton"  >
+          <div  onClick={()=>{ if(toggle){
+            settoggle(false);
+            funcc()
+          }}} className="submitbutton"  >
             Register
           </div>
           {/* <div  onClick={()=>{window.location='/'}} className="alreadyAcc">
