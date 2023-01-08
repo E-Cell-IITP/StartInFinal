@@ -3,6 +3,9 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import './personal_register.css'
 import fetchFoByDis from './Asyncc';
 import axios from 'axios';
+import * as Loader from 'react-loader-spinner';
+
+
 
 const Personal_Register = () => {
   const [FirstName,setFirstName]=useState("");
@@ -17,6 +20,7 @@ const Personal_Register = () => {
   async function funcc(){
 
     if(password!==""&&FirstName!==""&&LastName!==""&&username!==""&&Email!==""&&phone!==""&&confirmpassword!==""){
+      settoggle(false);
       if(password===confirmpassword){
     let item={FirstName: FirstName,LastName: LastName,username: username,phone: parseInt(phone),Email: Email,password: password};
     // const body = JSON.stringify(item);
@@ -92,6 +96,7 @@ const Personal_Register = () => {
         <span className="headingis" onClick={()=>{window.location = '/'}}>Start-In</span>
        </div>
       </div>
+      {toggle ?
       <div className="loginbox">
             <div className="headinglogin">Register</div>
             <div className="FirstName sameone ">
@@ -124,7 +129,6 @@ const Personal_Register = () => {
             </div>
            
           <div  onClick={()=>{ if(toggle){
-            settoggle(false);
             funcc()
           }}} className="submitbutton"  >
             Register
@@ -134,6 +138,14 @@ const Personal_Register = () => {
           </div> */}
           
       </div>
+  :
+  <div style={{ display: "flex", justifyContent: "center" }}>
+  <Loader.Puff
+    color="#00BFFF"
+    height={50}
+    width={50}
+  /></div>
+  }
     </div>
   )
 }
