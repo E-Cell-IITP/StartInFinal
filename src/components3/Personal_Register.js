@@ -108,7 +108,7 @@ const Personal_Register = () => {
             </div>
             <div className="Email sameone">
                 <label htmlFor="">Email</label>
-                <input value={Email} onChange={(e)=>setEmail(e.target.value)} type="tel"  placeholder='Enter your Email Id'/>
+                <input value={Email} onChange={(e)=>setEmail(e.target.value)} type="email"  placeholder='Enter your Email Id'/>
             </div>
             <div className="phone sameone">
                 <label htmlFor="">Phone No.</label>
