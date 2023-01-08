@@ -4,40 +4,37 @@ import React, { useState , useEffect} from 'react'
 import './register.css'
 // import AddMember from './AddMember'
 // import fetchFoByDis from './Asyncc';
+import axios from 'axios';
+import * as Loader from 'react-loader-spinner';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
   const [membercount, setmembercount] = useState([{id: 0,name:null},{id: 1,name:null},{id: 2,name:null},{id: 3,name:null}])
-//   const tempmem1={
-//       id: 0,
-//       name:null
-//   }
-//   // const [member, setmember] = useState([])
-//   setmembercount([...membercount,tempmem1])
-//   const tempmem2={
-//     id: 1,
-//     name:null
-// }
-// setmembercount([...membercount,tempmem2])
-// const tempmem3={
-//   id: 1,
-//   name:null
-// 
-// setmembercount([...membercount,tempmem3])
-
-
-
   const [description,setdescription] = useState("")
   const [teamname,setteamname] = useState("")
-  const [ct,setct]=useState(3)
+  const [ct,setct]=useState(4)
+  const [toggle,settoggle] = useState(true)
   const deleteitem=(itemId)=> {
     console.log(itemId)
     setct(ct-1);
     setmembercount((current) =>
     current.filter((membercount) =>  membercount.id!== itemId)
   );}
-  const deletemember=(id)=>{
+  const showToastMessage = (x) => {
+    toast.success(`${x}`, {
+        position: toast.POSITION.TOP_CENTER,
+        className:'message_toast'
+      });
+};
 
-  }
+  const showToastMessage1 = (x) => {
+    toast.error(`${x}`, {
+        position: toast.POSITION.TOP_CENTER,
+        className:'message_toast'
+      });
+};
    async function funcc(){
     const temp = []
 
@@ -46,24 +43,36 @@ const Register = () => {
     })
     console.log(temp)
     if(teamname!==""&&description!==""&& temp.length>=4){
+      settoggle(false)
     let item={teamName: teamname,description: description, members: temp};
-    const body = JSON.stringify(item);
-    let result=await fetch("https://ecell-startin-backend.onrender.com/users/team-register",
-   { method:'POST',
-    body:body,
+    // const body = JSON.stringify(item);
+    let result = {};
+    try{
+      result=await axios.post("https://ecell-startin-backend.onrender.com/users/team-register",
+     item,{
     headers:{
       "Content-Type":'application/json',
       "Accept":'application/json'
     }}
     )
-    result=await result.json();
+    // result=await result.json();
+    var x=result.data.message;
+    showToastMessage(x)
+    settoggle(true)
     console.log(result);
+    setTimeout(()=>{window.location='/dashboard'},3000)
+  }catch(err){
+    var g=err.response.data.message;
+    showToastMessage1(g)
+    console.log(err);
+    settoggle(true)
   }
+}
   else{
-    alert("Please fill all the field");
+    showToastMessage1("Please fill all the field");
+    settoggle(true)
   }
-  
-  }
+}
   const addmember=(e, id)=>{
     const temp = [...membercount];
     temp.map(elm => {
@@ -80,6 +89,7 @@ const Register = () => {
   }
   return (
     <div className='loginhead'>
+      {toggle?
       <div className="loginbox">
             <div className="headinglogin"> Team Register</div>
             <div className="firstname">
@@ -110,7 +120,7 @@ const Register = () => {
                 <input onChange={(e)=>addmember(e.target.value, elm.id)} type="text" placeholder={x}/>
                 <i className="far fa-trash-alt add-btn btn-delete" onClick={()=>{
                         deleteitem(elm.id);
-                        deletemember()
+                        // deletemember()
                     }}></i>
                 </div>
             </div>
@@ -131,9 +141,19 @@ const Register = () => {
               <textarea value={description} onChange={(e)=>setdescription(e.target.value)} placeholder='give description about your shop'></textarea>
             </div>
           <div   className="submitbutton" onClick={funcc}>
-            Register
+            Register Team
           </div>
+          <ToastContainer/>
       </div>
+      :
+  <div style={{ display: "flex", justifyContent: "center" }}>
+  <Loader.Puff
+    color="#00BFFF"
+    height={50}
+    width={50}
+  /></div>
+  }
+
     </div>
   )
 }

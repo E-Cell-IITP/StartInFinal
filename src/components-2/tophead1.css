@@ -6,6 +6,27 @@
     margin: 30px 0 5px;
     height: 70px;
 }
+/* .dropdown {
+   position: relative;
+   display: inline-block;
+  
+ }
+ 
+ .dropdown-content {
+   display: none;
+   position: absolute;
+   margin-left: -120px;
+   background-color: #f9f9f994;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   padding: 12px 16px;
+   z-index: 1;
+ }
+ 
+ .dropdown:hover .dropdown-content {
+   display: block;
+ } */
+ 
 .outside1{
    margin-top: 30px;
 }
@@ -22,30 +43,73 @@
    margin: 10px; */
    justify-content: space-around;
  }
+ .fa{
+   display: none;
+   align-items: center;
+ }
  ._btn_home{
     background-color: #1B9CFC;
     border-radius: 10px;
     width:fit-content;
-    padding: 10px 9px;
+    padding: 10px;
     cursor: pointer;
-    margin-left: 22px;
+    margin:10px ;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 800;
-    font-size: 25px;
+    /* font-weight: 800; */
+    font-size: 20px;
     text-align: center;
  }
  ._btn_leaderboard{
-    background-color: #1B9CFC;
+   background-color: #1B9CFC;
     border-radius: 10px;
-    width:fit-content;
-    padding:0  9px;
+    width: 100%;;
+    padding:4px;
     margin: 10px;
+    color: white;
     cursor: pointer;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     flex-direction: right;
+ }
+
+ @media only screen and (max-width: 600px) {
+   .dropdown {
+      position: relative;
+      display: inline-block;
+      /* background-color: yellow; */
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      margin-left: -120px;
+      background-color: #f9f9f994;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+    ._btn_home{
+      font-size: 12px;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .fa{
+      display: block;
+      font-size: 25px;
+      align-items: center;
+      justify-content: center;
+      padding-right: 10px;
+      padding-top: 15px;
+    }
+    ._btn_leaderboard{
+      color: black;
+      background-color: #f9f9f91e;
+      /* opacity: 0; */
+    }
  }

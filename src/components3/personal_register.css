@@ -194,3 +194,7 @@
 .alreadyAcc:hover{
     scale: 1.04;
 }
+.message_toast{
+    width: 400px;
+    min-width: 200px;
+}
