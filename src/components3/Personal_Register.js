@@ -3,6 +3,9 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import './personal_register.css'
 import fetchFoByDis from './Asyncc';
 import axios from 'axios';
+import * as Loader from 'react-loader-spinner';
+
+
 
 const Personal_Register = () => {
   const [FirstName,setFirstName]=useState("");
@@ -17,6 +20,7 @@ const Personal_Register = () => {
   async function funcc(){
 
     if(password!==""&&FirstName!==""&&LastName!==""&&username!==""&&Email!==""&&phone!==""&&confirmpassword!==""){
+      settoggle(false);
       if(password===confirmpassword){
     let item={FirstName: FirstName,LastName: LastName,username: username,phone: parseInt(phone),Email: Email,password: password};
     // const body = JSON.stringify(item);
@@ -30,7 +34,7 @@ const Personal_Register = () => {
   // });
     try{
 
-    result=await axios.post("https://ecell-startin-backend.onrender.com/users/register",
+    result = await axios.post("https://ecell-startin-backend.onrender.com/users/register",
     item,{
     headers: { 
       'Content-Type': 'application/json',
@@ -38,12 +42,11 @@ const Personal_Register = () => {
       'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE',
       'Access-Control-Allow-Headers': 'Content-Type',
       'Access-Control-Allow-Credentials': true
-    }}
+    }})
     // headers:{
     //   "Content-Type":'application/json',
     //   "Accept":'application/json'
     // }
-  );
   // setFirstName("");
     // setEmail("");
     // setUsername("");
@@ -93,6 +96,7 @@ const Personal_Register = () => {
         <span onClick={()=>{window.location='/'}} className="headingis">Start-In</span>
        </div>
       </div>
+      {toggle ?
       <div className="loginbox">
             <div className="headinglogin">Register</div>
             <div className="FirstName sameone ">
@@ -109,7 +113,7 @@ const Personal_Register = () => {
             </div>
             <div className="Email sameone">
                 <label htmlFor="">Email</label>
-                <input value={Email} onChange={(e)=>setEmail(e.target.value)} type="tel"  placeholder='Enter your Email Id'/>
+                <input value={Email} onChange={(e)=>setEmail(e.target.value)} type="email"  placeholder='Enter your Email Id'/>
             </div>
             <div className="phone sameone">
                 <label htmlFor="">Phone No.</label>
@@ -125,7 +129,6 @@ const Personal_Register = () => {
             </div>
            
           <div  onClick={()=>{ if(toggle){
-            settoggle(false);
             funcc()
           }}} className="submitbutton"  >
             Register
@@ -135,6 +138,14 @@ const Personal_Register = () => {
           </div> */}
           
       </div>
+  :
+  <div style={{ display: "flex", justifyContent: "center" }}>
+  <Loader.Puff
+    color="#00BFFF"
+    height={50}
+    width={50}
+  /></div>
+  }
     </div>
   )
 }

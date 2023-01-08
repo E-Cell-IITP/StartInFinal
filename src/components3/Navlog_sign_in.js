@@ -12,7 +12,7 @@ const Navlog_sign_in = () => {
     <div className="headofnav">
        <div className='navcontain1'>
        <div className="top1">
-        <span className="headingis">Start-In</span>
+        <span className="headingis" >Start-In</span>
        </div>
       </div>
       <div className="log_sign">
