@@ -93,7 +93,7 @@ const Personal_Register = () => {
     <div className='loginhead'>
       <div className='navcontain1'>
        <div className="top1">
-        <span onClick={()=>{window.location='/'}} className="headingis">Start-In</span>
+        <span className="headingis" onClick={()=>{window.location = '/'}}>Start-In</span>
        </div>
       </div>
       {toggle ?
