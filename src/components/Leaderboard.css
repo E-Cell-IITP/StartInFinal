@@ -1,7 +1,8 @@
 body{
     /* height: 100vh;
     width: 190vh; */
-    background-image: url("./bg_startIn.jpg");
+    /* background-image: url("./bg_startIn.jpg"); */
+    background-image: radial-gradient(#04619F, #000000);
     background-attachment: fixed;
 
     /* background-size: 100%; */

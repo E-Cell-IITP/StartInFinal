@@ -49,7 +49,7 @@ const Carousal = () => {
             else{
                 setCurrentIndex(currentIndex+1);
             }
-        },10000);
+        },4000);
       return () => clearInterval(interval);
     },);
     return (

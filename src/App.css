@@ -3,7 +3,8 @@
   text-decoration: none;
 }
 body{
-  background-image: url("./images/ecellbackground1.jpeg");
+  /* background-image: url("./images/ecellbackground1.jpeg"); */
+    background-image: radial-gradient(#2A2A72,#009FFD);
     background-attachment: fixed;
     
     background-size: 100%;
