@@ -1,0 +1,20 @@
+.conditions{
+    margin: 20px;
+    width: 95%;
+   
+}
+.headin{
+    background-color:red;
+    font-size: 35px;
+    color: white;
+    width: fit-content;
+    padding: 10px;
+    margin: 10px 0;
+}
+.para1{
+    background-color: rgba(240, 248, 255, 0.622);
+    color: black;
+    font-size: 25px;
+    padding: 10px;
+    font-weight: 500;
+}

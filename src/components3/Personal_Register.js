@@ -34,7 +34,7 @@ const Personal_Register = () => {
 
   async function funcc(){
 
-    if(password!==""&&FirstName!==""&&LastName!==""&&username!==""&&Email!==""&&phone!==""&&confirmpassword!==""){
+    if(password!==""&&FirstName!==""&&LastName!==""&&username!==""&&Email!==""&&phone!==""&&confirmpassword!==""&&phone.length>=10&&phone.length<=12){
       settoggle(false);
       if(password===confirmpassword){
     let item={FirstName: FirstName,LastName: LastName,username: username,phone: parseInt(phone),Email: Email,password: password};
