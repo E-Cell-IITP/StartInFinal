@@ -90,7 +90,7 @@ const Personal_Register = () => {
     <div className='loginhead'>
       <div className='navcontain1'>
        <div className="top1">
-        <span className="headingis">Start-In</span>
+        <span onClick={()=>{window.location='/'}} className="headingis">Start-In</span>
        </div>
       </div>
       <div className="loginbox">

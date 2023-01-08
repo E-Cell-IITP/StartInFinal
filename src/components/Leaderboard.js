@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import './Leaderboard.css'
 import Laederboard_table from './Laederboard_table'
+import Homeloginregister from './homeloginregister'
 
 
 const Leaderboard = () => {
@@ -24,10 +25,14 @@ const Leaderboard = () => {
 
   return (
     <div className='main' >
-      <div className='menubar'>
-        <div className='btn_home'>Home</div>
-        <div className='btn_leaderboard'>Leaderboard</div>
-      </div>
+      {/* <div className='menubar'>
+        <div onClick={()=>{window.location='/'}} className='btn_home'>Home</div>
+        <div className="rightnav1">
+        <div onClick={()=>{window.location='/login'}} className='loginregister'>Login</div>
+        <div onClick={()=>{window.location='/personal_register'}} className='loginregister'>Register</div>
+        </div>
+      </div> */}
+      
       <div className='board'>Leaderboard</div>
       <Laederboard_table rows={list}/>
     </div>

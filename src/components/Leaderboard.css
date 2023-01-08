@@ -19,11 +19,35 @@ body{
      flex-direction: row;
      justify-content: space-between;
  }
+ .rightnav1{
+   display: flex;
+   flex-direction: row;
+   width: fit-content; 
+   /* padding:10px;
+   margin: 10px; */
+   justify-content: space-around;
+ }
+ .loginregister{
+   background-color: #1B9CFC;
+   border-radius: 10px;
+   width:fit-content;
+   padding:0  9px;
+   margin: 10px;
+   cursor: pointer;
+   font-family: 'Inter';
+   font-style: normal;
+   font-weight: 800;
+   font-size: 25px;
+   text-align: center;
+   flex-direction: right;
+ }
+ 
  .btn_home{
     background-color: #1B9CFC;
     border-radius: 50px;
     width:100px;
     cursor: pointer;
+    margin: 10px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;

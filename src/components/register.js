@@ -6,7 +6,7 @@ import './register.css'
 // import fetchFoByDis from './Asyncc';
 
 const Register = () => {
-  const [membercount, setmembercount] = useState([{id: 0,name:null},{id: 1,name:null},{id: 2,name:null}])
+  const [membercount, setmembercount] = useState([{id: 0,name:null},{id: 1,name:null},{id: 2,name:null},{id: 3,name:null}])
 //   const tempmem1={
 //       id: 0,
 //       name:null
@@ -45,9 +45,10 @@ const Register = () => {
       temp.push(elm.name)
     })
     console.log(temp)
+    if(teamname!==""&&description!==""&& temp.length>=4){
     let item={teamName: teamname,description: description, members: temp};
     const body = JSON.stringify(item);
-    let result=await fetch("http://localhost:4000/users/team-register",
+    let result=await fetch("https://ecell-startin-backend.onrender.com/users/team-register",
    { method:'POST',
     body:body,
     headers:{
@@ -58,10 +59,15 @@ const Register = () => {
     result=await result.json();
     console.log(result);
   }
+  else{
+    alert("Please fill all the field");
+  }
+  
+  }
   const addmember=(e, id)=>{
     const temp = [...membercount];
     temp.map(elm => {
-      if(elm.id == id)
+      if(elm.id === id)
       {
         elm.name = e;
       }
@@ -100,19 +106,19 @@ const Register = () => {
               return(
                 <div className="lastname">
                 <label htmlFor="">username</label>
-                <form className='container'>
+                <div className='container'>
                 <input onChange={(e)=>addmember(e.target.value, elm.id)} type="text" placeholder={x}/>
                 <i className="far fa-trash-alt add-btn btn-delete" onClick={()=>{
                         deleteitem(elm.id);
                         deletemember()
                     }}></i>
-                </form>
+                </div>
             </div>
               )
             })
           }
             <div className='btn-add' onClick={()=>{
-              if(ct<7){
+              if(ct<6){
                 // const new_mem = {
                 //   number:ct-3
                 // }

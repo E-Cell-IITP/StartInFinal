@@ -21,11 +21,11 @@ const Navlog_sign_in = () => {
          <span onClick={()=>{window.location='teamregister'}} className="teamregister">TeamRegistration</span>
       </div>
     </div>
-    <Carousal/>
-    <Leaderboard/> 
+    {/* <Carousal/>
+    <Leaderboard/>  */}
     {/* <Team_register/> */}
-    <Register/>
-    <Dashboard1 />
+    {/* <Register/>
+    <Dashboard1 /> */}
     </div>
     
   )

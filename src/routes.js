@@ -11,6 +11,7 @@ import Personal_Register from './components3/Personal_Register';
 import Top_carousal from './components-2/Top_carousal';
 import Leaderboard from './components/Leaderboard';
 import Register from './components/register';
+import Outsideleaderboard from './components/outsideleaderboard';
 
 
 
@@ -18,9 +19,10 @@ function useAuth() {
     return localStorage.getItem('token')?true:false;
   }
   
-  function PrivateRoute({ children }) {
+  function PrivateRoute({  }) {
     const auth = useAuth();
-    return auth ? children : <Navigate to="/login" />;
+    console.log(localStorage.getItem('token'));
+    return auth ? <Dashboard1/> : <Navigate to="/login" />;
   }
 
   
@@ -41,14 +43,11 @@ export default function Router() {
       path:'/others1',
       element:<Others1/>
     },
-    {
-      path:'/dashboard',
-      element:<Dashboard1/>
-    },
-    {
-      path:'/dashboard/today',
-      element:<Todayprofit/>
-    },
+    // {
+    //   path:'/dashboard',
+    //   element:<Dashboard1/>
+    // },
+   
     {
       path:'/login',
       element:<Login1/>
@@ -66,9 +65,22 @@ export default function Router() {
       element:<Register/>
     },
     {
-      path:'/leaderboard',
-      element:<Leaderboard/>
-    }
+      path:'/outsideleaderboard',
+      element:<Outsideleaderboard/>
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><Dashboard1 /></PrivateRoute> ,
+        // children: [
+          // { path: '/', element: <Navigate to="/dashboard" replace /> },
+          // { path: 'app', element: <PrivateRoute><DashboardApp /></PrivateRoute> },
+          // {
+          //   path:'/today',
+          //   element:<PrivateRoute><Todayprofit/></PrivateRoute> 
+          // },
+        //   { path: 'user*', element: <PrivateRoute><User /></PrivateRoute>},
+        // ]
+      },
 
 
     ]);

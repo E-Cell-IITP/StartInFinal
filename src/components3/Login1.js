@@ -9,7 +9,7 @@ const Login1 = () => {
     let item={username,password};
     console.log(item);
     const body = JSON.stringify(item);
-    let result=await fetch("http://localhost:4000/users/login",
+    let result=await fetch("https://ecell-startin-backend.onrender.com/users/login",
    { method:'POST',
     body:body,
     headers:{
@@ -19,12 +19,18 @@ const Login1 = () => {
     )
     result=await result.json();
     console.log(result);
+    var x=result.data.token;
+    var y=result.data.username;
+    console.log(y);
+    localStorage.setItem('token',x);
+    localStorage.setItem('username',y);
+    window.location='/dashboard'
   }
   return (
     <div className='loginhead'>
       <div className='navcontain1'>
        <div className="top1">
-        <span className="headingis">Start-In</span>
+        <span onClick={()=>{window.location='/'}} className="headingis">Start-In</span>
        </div>
       </div>
       <div className="_loginbox">
@@ -41,10 +47,10 @@ const Login1 = () => {
           <div onClick={funcc} className="_submitbutton">
             Sign In
           </div>   
-          <p className="_forgot-password">
+          {/* <p className="_forgot-password">
             Forgot <a href="#">password?</a>
-        </p>
-        <div  onClick={()=>{window.location='/Navlogin_register'}} className="_Donthave">
+        </p> */}
+        <div  onClick={()=>{window.location='/personal_register'}} className="_Donthave">
            Don't have Account? Register
           </div>
       </div>

@@ -17,6 +17,10 @@ import Todayprofit from './Todayprofit';
 
 
 const Dashboard1 = () => {
+  function useAuth() {
+    return localStorage.getItem('username');
+  }
+  var xx=useAuth();
   
   function createData(sno,amount, date,timeofentry, name) {
     return {sno,amount, date,timeofentry, name};
@@ -37,14 +41,27 @@ const Dashboard1 = () => {
     // <Todayprofit rows={rows} createData={createData} setRows={setRows}/>
     window.location='dashboard/today'
   }
-
+  var zz=`Hi, ${xx}`;
+  const signout=()=>{
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    console.log(localStorage.getItem('token'));
+    window.location='/';
+  }
+ 
   return (
     <div className='topp'>
         <div className="userlead">
-            <span className="left">Hi,UserName</span>
+            <span className="left">{zz}</span>
+            <div className="rightlogout">
+            <span onClick={()=>{window.location='/teamregister'}} className=' teamregister'>Team Registration</span>
+            <span onClick={signout} className="logout1">Logout</span>
             <span className="right">Leaderboard</span>
+            </div>
         </div>
+        
       <div className="topheading">
+      
         <span className='head'>Dashboard</span>
       </div>
       <div className="pic">
