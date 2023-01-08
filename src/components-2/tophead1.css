@@ -26,26 +26,27 @@
     background-color: #1B9CFC;
     border-radius: 10px;
     width:fit-content;
-    padding: 10px 9px;
+    padding: 10px;
     cursor: pointer;
-    margin-left: 22px;
+    margin:10px ;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 800;
-    font-size: 25px;
+    /* font-weight: 800; */
+    font-size: 20px;
     text-align: center;
  }
  ._btn_leaderboard{
     background-color: #1B9CFC;
     border-radius: 10px;
     width:fit-content;
-    padding:0  9px;
+    padding:4px;
     margin: 10px;
     cursor: pointer;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     flex-direction: right;
  }
+.s1{}

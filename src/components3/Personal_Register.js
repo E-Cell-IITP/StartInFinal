@@ -4,6 +4,8 @@ import './personal_register.css'
 import fetchFoByDis from './Asyncc';
 import axios from 'axios';
 import * as Loader from 'react-loader-spinner';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -16,6 +18,19 @@ const Personal_Register = () => {
   const [password,setPassword]=useState("");
   const [confirmpassword,setConfirmpassword]=useState("");
   const [toggle,settoggle] = useState(true)
+  const showToastMessage = (x) => {
+    toast.success(`${x}`, {
+        position: toast.POSITION.TOP_CENTER,
+        className:'message_toast'
+      });
+};
+
+  const showToastMessage1 = (x) => {
+    toast.error(`${x}`, {
+        position: toast.POSITION.TOP_CENTER,
+        className:'message_toast'
+      });
+};
 
   async function funcc(){
 
@@ -33,7 +48,6 @@ const Personal_Register = () => {
   //     next();
   // });
     try{
-
     result = await axios.post("https://ecell-startin-backend.onrender.com/users/register",
     item,{
     headers: { 
@@ -57,12 +71,13 @@ const Personal_Register = () => {
 
     console.log(result);
     var x=result.data.message;
-    window.alert(x);
     settoggle(true)
-    window.location='/'
-    }catch(err){
-      var g=err.response.data.message;
-      window.alert(g);
+    showToastMessage(x)    // window.location='/'
+    setTimeout(()=>{window.location='/login'},3000)
+  }catch(err){
+    var g=err.response.data.message;
+    showToastMessage1(g)    // window.location='/'
+    // window.alert(g);
       console.log(err);
       settoggle(true)
     } 
@@ -83,7 +98,7 @@ const Personal_Register = () => {
   }
 
   else{
-    window.alert("password doesn't match");
+    showToastMessage1("password doesn't match");
     settoggle(true)
   }
 }
@@ -94,6 +109,7 @@ const Personal_Register = () => {
       <div className='navcontain1'>
        <div className="top1">
         <span onClick={()=>{window.location='/'}} className="headingis">Start-In</span>
+        {/* <ToastContainer/> */}
        </div>
       </div>
       {toggle ?
@@ -129,10 +145,17 @@ const Personal_Register = () => {
             </div>
            
           <div  onClick={()=>{ if(toggle){
-            funcc()
-          }}} className="submitbutton"  >
+            funcc();
+            // if(ct){
+              // showToastMessage();
+              
+              // setct(false)
+              // window.location='/login';
+            }
+          }} className="submitbutton"  >
             Register
           </div>
+          <ToastContainer/>
           {/* <div  onClick={()=>{window.location='/'}} className="alreadyAcc">
             Have account? Sign-In
           </div> */}

@@ -6,15 +6,15 @@ import Homeloginregister from './homeloginregister'
 
 const Leaderboard = () => {
   const list = [
-    { id: 1, TeamName: 'Snow', Category: 'Jon', TotalProfit: 35 },
-    { id: 2, TeamName: 'Lannister', Category: 'Cersei', TotalProfit: 42 },
-    { id: 3, TeamName: 'Lannister', Category: 'Jaime', TotalProfit: 45 },
-    { id: 4, TeamName: 'Stark', Category: 'Arya', TotalProfit: 16 },
-    { id: 5, TeamName: 'Targaryen', Category: 'Daenerys', TotalProfit: 5000 },
-    { id: 6, TeamName: 'Melisandre', Category: 'pradeep', TotalProfit: 15000 },
-    { id: 7, TeamName: 'Clifford', Category: 'Ferrara', TotalProfit: 44 },
-    { id: 8, TeamName: 'Frances', Category: 'Rossini', TotalProfit: 36 },
-    { id: 9, TeamName: 'Roxie', Category: 'Harvey', TotalProfit: 65 },
+    // { id: 1, TeamName: 'Snow', Category: 'Jon', TotalProfit: 35 },
+    // { id: 2, TeamName: 'Lannister', Category: 'Cersei', TotalProfit: 42 },
+    // { id: 3, TeamName: 'Lannister', Category: 'Jaime', TotalProfit: 45 },
+    // { id: 4, TeamName: 'Stark', Category: 'Arya', TotalProfit: 16 },
+    // { id: 5, TeamName: 'Targaryen', Category: 'Daenerys', TotalProfit: 5000 },
+    // { id: 6, TeamName: 'Melisandre', Category: 'pradeep', TotalProfit: 15000 },
+    // { id: 7, TeamName: 'Clifford', Category: 'Ferrara', TotalProfit: 44 },
+    // { id: 8, TeamName: 'Frances', Category: 'Rossini', TotalProfit: 36 },
+    // { id: 9, TeamName: 'Roxie', Category: 'Harvey', TotalProfit: 65 },
 ]
   
   list.sort((a, b) => (a.TotalProfit > b.TotalProfit) ? -1 : 1)

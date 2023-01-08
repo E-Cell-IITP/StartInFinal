@@ -4,25 +4,12 @@ import React, { useState , useEffect} from 'react'
 import './register.css'
 // import AddMember from './AddMember'
 // import fetchFoByDis from './Asyncc';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
   const [membercount, setmembercount] = useState([{id: 0,name:null},{id: 1,name:null},{id: 2,name:null},{id: 3,name:null}])
-//   const tempmem1={
-//       id: 0,
-//       name:null
-//   }
-//   // const [member, setmember] = useState([])
-//   setmembercount([...membercount,tempmem1])
-//   const tempmem2={
-//     id: 1,
-//     name:null
-// }
-// setmembercount([...membercount,tempmem2])
-// const tempmem3={
-//   id: 1,
-//   name:null
-// 
-// setmembercount([...membercount,tempmem3])
 
 
 
@@ -35,6 +22,13 @@ const Register = () => {
     setmembercount((current) =>
     current.filter((membercount) =>  membercount.id!== itemId)
   );}
+  const showToastMessage = (x) => {
+    toast.success(`${x}`, {
+        position: toast.POSITION.TOP_CENTER,
+        className:'message_toast'
+      });
+};
+
   const deletemember=(id)=>{
 
   }
@@ -58,9 +52,11 @@ const Register = () => {
     )
     result=await result.json();
     console.log(result);
+    showToastMessage("team registered successfully")
+    setTimeout(()=>{window.location='/dashboard'},5000)
   }
   else{
-    alert("Please fill all the field");
+    showToastMessage("Please fill all the field");
   }
   
   }
@@ -133,6 +129,7 @@ const Register = () => {
           <div   className="submitbutton" onClick={funcc}>
             Register
           </div>
+          <ToastContainer/>
       </div>
     </div>
   )
