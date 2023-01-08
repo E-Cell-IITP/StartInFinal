@@ -71,15 +71,15 @@ const Personal_Register = () => {
 
     console.log(result);
     var x=result.data.message;
-    settoggle(true)
     showToastMessage(x)    // window.location='/'
+    settoggle(true)
     setTimeout(()=>{window.location='/login'},3000)
   }catch(err){
     var g=err.response.data.message;
     showToastMessage1(g)    // window.location='/'
     // window.alert(g);
-      console.log(err);
-      settoggle(true)
+    console.log(err);
+    settoggle(true)
     } 
 
     // result=await result.json();
