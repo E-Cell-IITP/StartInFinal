@@ -12,6 +12,7 @@ import Top_carousal from './components-2/Top_carousal';
 import Leaderboard from './components/Leaderboard';
 import Register from './components/register';
 import Outsideleaderboard from './components/outsideleaderboard';
+import Payment from './components/payment';
 
 
 
@@ -19,10 +20,10 @@ function useAuth() {
     return localStorage.getItem('token')?true:false;
   }
   
-  function PrivateRoute({  }) {
+  function PrivateRoute({ children }) {
     const auth = useAuth();
     console.log(localStorage.getItem('token'));
-    return auth ? <Dashboard1/> : <Navigate to="/login" />;
+    return auth ? children : <Navigate to="/login" />;
   }
 
   
@@ -81,6 +82,10 @@ export default function Router() {
         //   { path: 'user*', element: <PrivateRoute><User /></PrivateRoute>},
         // ]
       },
+      {
+        path: '/payment',
+        element: <PrivateRoute><Payment /></PrivateRoute>
+      }
 
 
     ]);

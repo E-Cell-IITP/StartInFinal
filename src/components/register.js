@@ -61,7 +61,7 @@ const Register = () => {
     }
     if(teamname!==""&&description!==""&& count>=4){
       settoggle(false)
-    let item={teamName: teamname,description: description, members: temp};
+    let item={teamName: teamname,description: description, members: temp, token: localStorage.getItem('token')};
     // const body = JSON.stringify(item);
     let result = {};
     // let item_user = {username: membercount[0].name}
