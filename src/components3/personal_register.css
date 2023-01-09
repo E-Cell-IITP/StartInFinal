@@ -7,12 +7,26 @@
     align-items: center;
     color:white;
 }
+.loginboxbox1{
+    width: 100%;
+    height: 900px;
+    text-align: right;
+    justify-content: end;
+    background-image: url('../images/space-rocket-launch-model-icon_40073-15-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    display: flex;
+    background-position-y: center;
+    
+}
 .loginbox{
-    margin-top: 20px;
-    width: 60%;
+    margin:auto 10%;
+    width: 40%;
+    /* font-weight: 300 !important; */
+    
     min-width: 300px;
-    font-size: 30px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px !important;
+    font-family:'Inter';
     background-color:rgb(2, 1, 18);
     display: flex;
     justify-content: center;
@@ -26,10 +40,12 @@
     text-align: center;
     font-weight: bold;
     margin-top: 10px;
-    font-size: 50px;
+    font-size: 40px;
     /* color: black; */
-    padding:20px 10px;
-    background-color:rgba(34, 21, 218, 0.256);
+    font-family: 'Inter';
+    padding:10px 10px;
+    background-color:  rgb(129 128 143 / 0%);
+    /* background-color:rgba(34, 21, 218, 0.256); */
 }
 .headingis{
     cursor: pointer;
@@ -40,7 +56,7 @@
     display: flex;
     border-radius: 50%;
     flex-direction: column;
-    padding:20px 10px;
+   padding:10px 5px;
 }
 .firstname label{
     padding-left: 15px;
@@ -56,7 +72,7 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-    padding:20px 10px;
+   padding:10px 5px;
 }
 .lastname label{
     padding-left: 15px;
@@ -72,7 +88,7 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-    padding:20px 10px;
+   padding:10px 5px;
 }
 .email label{
     padding-left: 15px;
@@ -88,10 +104,10 @@
     width: 90%;
     border-width: 0;
     display: flex;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: lighter;
     flex-direction: column;
-    padding:20px 10px;
+   padding:10px 5px;
 }
 .sameone  label{
     padding-left: 15px;
@@ -100,7 +116,7 @@
 .sameone  input{
     border-radius: 10px;
     padding: 10px;
-    font-size: 20px;
+    font-size:15px;
     margin-left: 15px;
 }
 
@@ -109,7 +125,7 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-    padding:20px 10px;
+   padding:10px 5px;
 }
 .phone label{
     padding-left: 15px;
@@ -125,7 +141,7 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-    padding:20px 10px;
+   padding:10px 5px;
 }
 .sameone box label{
     padding-left: 15px;
@@ -141,7 +157,7 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-    padding:20px 10px;
+   padding:10px 5px;
 }
 .passwordbox label{
     padding-left: 15px;
@@ -153,26 +169,13 @@
     margin-left: 15px;
     
 }
-/* .checkbox1{
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    align-items: center;
-    text-align: left;
-     padding:20px 10px;
-}
-.checkbox1-input{
-    margin: 10px;
-}
-.checkbox1 label{
-    font-size: 20px;
-} */
+
 .submitbutton{
     margin-top: 30px;
     background-color:rgba(6, 97, 234, 0.826);
-    padding: 5px 10px ;
-    width: 80%;
+    padding: 5px 20px ;
+    width: fit-content;
+
     text-align: center;
     cursor: pointer;
     margin-bottom: 20px;

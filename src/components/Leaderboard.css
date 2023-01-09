@@ -1,11 +1,12 @@
 body{
     /* height: 100vh;
     width: 190vh; */
-    background-image: url("./bg_startIn.jpg");
+    /* background-image: url("./bg_startIn.jpg"); */
+     background-image: radial-gradient(#04619F, #000000);;
     background-attachment: fixed;
 
     /* background-size: 100%; */
-    padding: 0 50px;
+    /* padding: 0 50px; */
     background-repeat:repeat-y;
     /* background-color: #143E86; */
 }
@@ -58,6 +59,7 @@ body{
     background-color: #1B9CFC;
     border-radius: 50px;
     width:200px;
+    margin-left: 20px;
     cursor: pointer;
     font-family: 'Inter';
     font-style: normal;

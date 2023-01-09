@@ -40,13 +40,7 @@ const Personal_Register = () => {
     let item={FirstName: FirstName,LastName: LastName,username: username,phone: parseInt(phone),Email: Email,password: password};
     // const body = JSON.stringify(item);
     let result = {};
-  //   app.use(function(req, res, next) {
-  //     res.setHeader('Access-Control-Allow-Origin', '*');
-  //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  //     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  //     res.setHeader('Access-Control-Allow-Credentials', true);
-  //     next();
-  // });
+  
     try{
     result = await axios.post("https://ecell-startin-backend.onrender.com/users/register",
     item,{
@@ -57,23 +51,13 @@ const Personal_Register = () => {
       'Access-Control-Allow-Headers': 'Content-Type',
       'Access-Control-Allow-Credentials': true
     }})
-    // headers:{
-    //   "Content-Type":'application/json',
-    //   "Accept":'application/json'
-    // }
-  // setFirstName("");
-    // setEmail("");
-    // setUsername("");
-    // setPhone("");
-    // setPassword("");
-    // setConfirmpassword("");
-    // setLastName("");
+    
 
     console.log(result);
     var x=result.data.message;
     showToastMessage(x)    // window.location='/'
     settoggle(true)
-    setTimeout(()=>{window.location='/login'},3000)
+    setTimeout(()=>{window.location='/login'},1500)
   }catch(err){
     var g=err.response.data.message;
     showToastMessage1(g)    // window.location='/'
@@ -82,19 +66,7 @@ const Personal_Register = () => {
     settoggle(true)
     } 
 
-    // result=await result.json();
-    // setFirstName("");
-    // setEmail("");
-    // setUsername("");
-    // setPhone("");
-    // setPassword("");
-    // setConfirmpassword("");
-    // setLastName("");
-
-    // console.log(result);
-    // var x=result.data.message;
-    // window.alert(x);
-    // window.location='/'
+   
   }
 
   else{
@@ -113,6 +85,7 @@ const Personal_Register = () => {
        </div>
       </div>
       {toggle ?
+      <div className="loginboxbox1">
       <div className="loginbox">
             <div className="headinglogin">Register</div>
             <div className="FirstName sameone ">
@@ -160,6 +133,7 @@ const Personal_Register = () => {
             Have account? Sign-In
           </div> */}
           
+      </div>
       </div>
   :
   <div style={{ display: "flex", justifyContent: "center" }}>

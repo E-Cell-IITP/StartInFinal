@@ -12,7 +12,8 @@ const Tophead1 = () => {
   {/* <span>Mouse over me</span> */}
   <i class="fa fa-bars" aria-hidden="true"></i>
   <div class="dropdown-content rightnav">
-  <div onClick={()=>{window.location='/outsideleaderboard'}} className='_btn_leaderboard'>Leaderboard</div>
+  {/* <div onClick={()=>{window.location='/outsideleaderboard'}} className='_btn_leaderboard'>Leaderboard</div> */}
+  <div  className='_btn_leaderboard'>Leaderboard</div>
        
        <div onClick={()=>{window.location='/login'}} className='_btn_leaderboard'>Login</div>
        <div onClick={()=>{window.location='/personal_register'}} className='_btn_leaderboard'>Register</div>

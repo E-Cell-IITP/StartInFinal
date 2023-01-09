@@ -10,17 +10,22 @@
 }
 .navcontain1{
     width: 100%;
-    height: 100px;
-    background-color:rgb(222, 245, 245);
+    height: 80px;
+    /* background-color:rgb(222, 245, 245); */
 }
 .top1{
     display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80px;
 }
 .headingis{
     padding: 20px;
     margin-left: 20px;
     font-size: 40px;
     color:black;
+    /* background-color: none !important; */
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .log_sign{

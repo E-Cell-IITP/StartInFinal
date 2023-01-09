@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
-  const [membercount, setmembercount] = useState([{id: 0,name:null},{id: 1,name:null},{id: 2,name:null},{id: 3,name:null}])
+  const [membercount, setmembercount] = useState([{id: 1,name:null},{id: 2,name:null},{id: 3,name:null},{id: 4,name:null}])
   const [description,setdescription] = useState("")
   const [teamname,setteamname] = useState("")
   const [ct,setct]=useState(4)
@@ -28,7 +28,6 @@ const Register = () => {
         className:'message_toast'
       });
 };
-
   const showToastMessage1 = (x) => {
     toast.error(`${x}`, {
         position: toast.POSITION.TOP_CENTER,
@@ -60,7 +59,7 @@ const Register = () => {
     showToastMessage(x)
     settoggle(true)
     console.log(result);
-    setTimeout(()=>{window.location='/dashboard'},3000)
+    setTimeout(()=>{window.location='/dashboard'},1500)
   }catch(err){
     var g=err.response.data.message;
     showToastMessage1(g)
@@ -89,7 +88,13 @@ const Register = () => {
   }
   return (
     <div className='loginhead'>
+      <div className='navcontain1'>
+       <div className="top1">
+        <span onClick={()=>{window.location='/'}} className="headingis s1">Start-In</span>
+       </div>
+      </div>
       {toggle?
+      <div className="teamnamebox1">
       <div className="loginbox">
             <div className="headinglogin"> Team Register</div>
             <div className="firstname">
@@ -115,9 +120,9 @@ const Register = () => {
               let x = `member ${y}`;
               return(
                 <div className="lastname">
-                <label htmlFor="">username</label>
+                <label htmlFor="">UserName</label>
                 <div className='container'>
-                <input onChange={(e)=>addmember(e.target.value, elm.id)} type="text" placeholder={x}/>
+                <input onChange={(e)=>addmember(e.target.value, elm.id)} type="text" placeholder="member's userId"/>
                 <i className="far fa-trash-alt add-btn btn-delete" onClick={()=>{
                         deleteitem(elm.id);
                         // deletemember()
@@ -132,7 +137,7 @@ const Register = () => {
                 // const new_mem = {
                 //   number:ct-3
                 // }
-                setmembercount([...membercount,{id: ct, name: null}])
+                setmembercount([...membercount,{id: ct+1, name: null}])
                 setct(ct+1)
               }          
             }}>Add Member</div>
@@ -144,6 +149,7 @@ const Register = () => {
             Register Team
           </div>
           <ToastContainer/>
+      </div>
       </div>
       :
   <div style={{ display: "flex", justifyContent: "center" }}>

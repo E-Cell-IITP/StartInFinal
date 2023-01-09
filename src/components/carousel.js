@@ -9,6 +9,7 @@ const Carousal = () => {
     ]
     const containerStyle={
         width:"95%",
+        minWidth:"350px",
         height:"300px",
         margin:"10px auto",
         position:"relative"
