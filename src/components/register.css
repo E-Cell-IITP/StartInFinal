@@ -5,36 +5,50 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     color:white;
 
 }
 .loginbox{
-    margin-top: 20px;
+    margin:auto 10%;
     width: 60%;
-    min-width: 400px !important;
+    
     /* font-size: 30px; */
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Inter';
+
     background-color:rgb(2, 1, 18);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px 2px;
+    border-radius: 10px !important;
     flex-direction: column;
-    padding: 20px 0 40px 0px;
+    padding: 20px 0 10px 0px !important;
 }
 .headinglogin{
     width: 80%;
     text-align: center;
     /* font-weight: bold; */
-    font-size: 34px;
+    font-size: 30px !important;
     border-radius: 10px;
     /* color: black; */
     padding:20px 10px;
-    background-color:rgba(34, 21, 218, 0.256);
+    /* background-color:rgba(34, 21, 218, 0.256); */
+}
+.teamnamebox1{
+    width: 100%;
+    height: fit-content;
+    padding: 30px 0px;
+    /* background-color: aliceblue; */
+    background-image: url('../images/space-rocket-launch-model-icon_40073-15-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size:50%;
+    background-position-y: center;
+    justify-content: end;
+    display: flex;
 }
 .firstname{
     text-align: left ;
-    font-size: 30px;
+    font-size: 20px;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -46,8 +60,9 @@
 }
 .firstname input{
     border-radius: 10px;
-    padding: 5px;
-    font-size: 20px;
+    padding: 5px !important;
+    
+    font-size: 15px;
     margin-left: 15px;
 }
 .lastname{
@@ -62,14 +77,14 @@
 .lastname label{
     /* width: 100%; */
     padding-left: 15px;
-    font-size: 30px;
+    font-size: 20px;
     padding-bottom: 5px;
 }
 .lastname input{
-    padding: 5px;
+    padding: 5px !important;
     font-weight: lighter;
-    font-size: 20px;
-    margin-left: 15px;
+    font-size: 15px;
+    /* margin-left: 15px; */
     border-radius: 10px;
     width: 90%;
 
@@ -85,8 +100,8 @@
     padding:20px 10px;
 }
 .description label{
-    padding-left: 15px;
-    font-size: 30px;
+    /* padding-left: 15px; */
+    font-size: 20px;
     padding-bottom: 5px;
 }
 /* .description input{
@@ -97,39 +112,41 @@
 .description textarea{
     border-radius: 10px;
     border-width: 0;
+    font-size: 15px;
     padding: 5px;
 }
 .btn-delete{
     align-self: center;
     cursor: pointer;
     margin: 0 10px;
-    min-height: 40px;
+    min-height: 20px;
     /* height: 50px !important; */
 }
 .btn-add{
     text-align: center ;
     display: flex;
     flex-direction: column;
-    padding:10px 15px;
+    padding:5px 10px;
     width: fit-content;
-    /* padding-left: 15px;
-    padding-bottom: 5px; */
-    /* width: 30%; */
+    margin-top: 10px;
     min-width: 100px;
     border-radius: 10px;
     background-color: rgba(6, 97, 234, 0.826);
     cursor: pointer;
 
 }
+.btn-add:hover{
+    scale: 1.05;
+}
 .submitbutton{
-    margin-top: 30px;
+    margin-top: 15px !important;
     background-color:rgba(6, 97, 234, 0.826);
     padding: 5px 10px ;
     width: 20%;
     min-width: 150px;
     text-align: center;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 5px !important;
     border-radius: 20px;
 }
 .submitbutton:hover{
@@ -137,6 +154,25 @@
 }
 .container{
     display: flex;
+    padding-left: 0px;
     flex-direction: row;
-    height: fit-content;
+    /* height: fit-content; */
+    align-items: center !important;
+    justify-content: center !important;
+}
+@media only screen and (max-width: 600px) {
+    .teamnamebox1{
+        width: 100%;
+        justify-content: center;
+        background-image: none;
+        padding-top: 0px;
+    }
+    .loginbox{
+        margin: auto 10px !important;
+        padding-top: 5px !important;
+        width: 80% !important;
+    }
+    .headinglogin{
+        margin-top: 5px !important;
+    }
 }

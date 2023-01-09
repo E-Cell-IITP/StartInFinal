@@ -8,7 +8,7 @@ body{
     background-attachment: fixed;
     
     background-size: 100%;
-    padding: 10px 50px 50px;
+    /* padding: 10px 00px 50px !important; */
     background-repeat:repeat-y;
     /* background-color: #143E86; */
 

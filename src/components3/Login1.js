@@ -61,7 +61,7 @@ const Login1 = () => {
     localStorage.setItem('teamName',k);
     setTimeout(() => {
       window.location='/dashboard'
-    }, 3000);
+    }, 1500);
   }
   else{
       const z = result.data.message;
@@ -84,10 +84,11 @@ const Login1 = () => {
        </div>
       </div>
       {toggle?
+      <div className="loginboxbox">
       <div className="_loginbox">
             <div className="_headinglogin">Sign In</div>
             <div className="_emailbox">
-                <label  htmlFor="">username</label>
+                <label  htmlFor="">Username</label>
                 <input value={username} onChange={(e)=>setusername(e.target.value)} type="username" placeholder='Enter your username'/>
             </div>
             <div className="_passwordbox">
@@ -105,6 +106,7 @@ const Login1 = () => {
         <div  onClick={()=>{window.location='/personal_register'}} className="_Donthave">
            Don't have Account? Register
           </div>
+      </div>
       </div>
       :
   <div style={{ display: "flex", justifyContent: "center" }}>

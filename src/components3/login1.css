@@ -7,74 +7,97 @@
     align-items: center;
 }
 .headingis{
-    background-color:aliceblue;
+    /* background-color:aliceblue; */
     /* margin-top: 2px; */
+    color:whitesmoke;
     padding: 10px !important;
     margin: 10px;
     cursor: pointer !important;
 }
 ._loginbox{
-    margin-top: 20px;
-    width: 60%;
-    min-width: 300px;
-    font-size: 30px;
+    margin:auto 10%;
+    width: 30%;
+    min-width: 200px;
+    font-size: 20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color:rgb(2, 1, 18);
     display: flex;
-    justify-content: center;
+    text-align: right;
+    align-self: right;
+    height: 450px;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
-    padding: 0 0 40px 0px;
+    padding: 20px 0 40px 0px;
+    border-radius: 10px;
+    font-family: 'Inter';
+    
+}
+.loginboxbox{
+    width: 90%;
+    /* background-color: aliceblue; */
+    height: 600px;
+    text-align: right;
+    justify-content: end;
+    background-image: url('../images/space-rocket-launch-model-icon_40073-15-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position-y: center;
+    display: flex;
+    
 }
 ._headinglogin{
     width: 80%;
     text-align: center;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 30px;
     /* color: black; */
     padding:20px 10px;
-    background-color:rgba(34, 21, 218, 0.256);
+    /* background-color:rgba(34, 21, 218, 0.256); */
 }
 ._emailbox{
     text-align: left ;
     width: 90%;
     display: flex;
     flex-direction: column;
-    padding:20px 10px;
+    padding:10px 5px;
 }
 ._emailbox label{
-    padding-left: 15px;
+    /* padding-left: 15px; */
    
     padding-bottom: 5px;
 }
 ._emailbox input{
     padding: 10px;
     border-radius: 10px;
-    margin-left: 15px;
+    font-size: 15px;
+    /* margin-left: 15px; */
 }
 ._passwordbox{
     text-align: left ;
     width: 90%;
     display: flex;
     flex-direction: column;
-    padding:20px 10px;
+    padding:10px 5px;
 }
 ._passwordbox label{
-    padding-left: 15px;
+    /* padding-left: 15px; */
     padding-bottom: 5px;
     
 }
 ._passwordbox input{
     padding: 10px;
-    margin-left: 15px;
+    font-size: 15px;
+    /* margin-left: 15px; */
     border-radius: 10px;
 }
 
 ._submitbutton{
     background-color:rgba(6, 97, 234, 0.826);
-    padding: 10px 10px ;
-    width: 80%;
+    padding: 5px 15px ;
+    width: fit-content;
     margin-bottom: 0px;
+    margin-top: 10px;
     text-align: center;
     cursor: pointer;
     border-radius: 20px;
@@ -85,13 +108,26 @@
 ._Donthave{
     background-color:rgba(102, 109, 244, 0.826);
     padding: 5px 10px ;
-    width: 80%;
-    font-size: 25px;
+    width: fit-content;
+    font-size: 15px;
+    font-weight: 200 !important;
     margin-top: 20px;
     text-align: center;
+    font-family: 'Inter';
     cursor: pointer;
     border-radius: 20px;
 }
 ._Donthave:hover{
     scale: 1.04;
+}
+@media only screen and (max-width: 600px) {
+    .loginboxbox{
+        justify-content: center;
+        width: 100%;
+    }
+    ._loginbox{
+        width: 90%;
+        margin: 20px 20px;
+        /* margin-top: 20px ; */
+    }
 }

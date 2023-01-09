@@ -41,7 +41,7 @@ const Dashboard1 = () => {
     // <Todayprofit rows={rows} createData={createData} setRows={setRows}/>
     window.location='dashboard/today'
   }
-  var zz=`Hi, ${xx}`;
+  var zz=`Hi , ${xx}`;
   const signout=()=>{
     localStorage.removeItem('token');
     localStorage.removeItem('username');
@@ -52,15 +52,23 @@ const Dashboard1 = () => {
   return (
     <div className='topp'>
         <div className="userlead">
-            <span className="left">{zz}</span>
+            <div className="left">{zz}</div>
             <div className="rightlogout">
+         <div className="dropdown">
+  {/* <span>Mouse over me</span> */}
+  <i class="fa fa-bars" aria-hidden="true"></i>
+  <div class="dropdown-content rightnav">
             {localStorage.teamName!=='null'?
             <p>{`Team : ${localStorage.teamName}`}</p>
             :
             <span onClick={()=>{window.location='/teamregister'}} className=' teamregister'>Create Team</span>
             }
-            <span onClick={signout} className="logout1">Logout</span>
-            <span className="right">Leaderboard</span>
+            <div onClick={signout} className="logout1">Logout</div>
+            <div className="right">Leaderboard</div>
+  {/* <p>Hello World!</p> */}
+  </div>
+  </div>
+            
             </div>
         </div>
         
