@@ -56,10 +56,32 @@ const Register = () => {
     let count = 0;
     for(let i=0;i<temp.length;i++)
     {
-      if(temp[i])
+      if(temp[i]) 
         count++;
     }
-    if(teamname!==""&&description!==""&& count>=4){
+    var ct=0;
+    for(let i=0;i<temp.length;i++)
+    {
+      for(let j=i+1;j<temp.length;j++){
+        if(temp[i]&&temp[j]&&temp[i]===temp[j]){
+          ct++;
+          console.log(i);
+          console.log(j);
+        }
+      }
+    }
+
+    if(teamname!==""&&description!==""){
+      if(ct!==0){
+        console.log('hehe');
+        // settoggle(false)
+        showToastMessage1('All username must be unique');
+      }
+      else if(count<4){
+        // settoggle(false)
+        showToastMessage1("Atleast 4 member is required");
+      }
+      else{
       settoggle(false)
     let item={teamName: teamname,description: description, members: temp};
     // const body = JSON.stringify(item);
@@ -100,6 +122,7 @@ const Register = () => {
     settoggle(true)
     showToastMessage1(g)
   }
+}
 }
   else{
     settoggle(true)
@@ -151,12 +174,12 @@ const Register = () => {
             membercount.map((elm) =>{
               {/* console.log(elm.id) */}
               let y = elm.id;
-              let x = `member ${y+1}`;
+              let x = `member ${y}`;
               return(
                 <div className="lastname">
                 <label htmlFor="">UserName</label>
                 <div className='container'>
-                <input onChange={(e)=>addmember(e.target.value, elm.id)} type="text" placeholder={elm.id===0?"Your Username":x}/>
+                <input onChange={(e)=>addmember(e.target.value, elm.id)} type="text" placeholder={elm.id===1?"Your Username":x}/>
                 <i className="far fa-trash-alt add-btn btn-delete" onClick={()=>{
                         deleteitem(elm.id);
                         // deletemember()

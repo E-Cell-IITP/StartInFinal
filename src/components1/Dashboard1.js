@@ -52,16 +52,17 @@ const Dashboard1 = () => {
   return (
     <div className='topp'>
         <div className="userlead">
-            <div className="left">{zz}</div>
+            <div className="left">{localStorage.teamName!=='null'?<div><p>{zz}</p><p>{`Team : ${localStorage.teamName}`}</p></div>:<div><p>{zz}</p></div>}</div>
             <div className="rightlogout">
          <div className="dropdown">
   {/* <span>Mouse over me</span> */}
   <i class="fa fa-bars" aria-hidden="true"></i>
   <div class="dropdown-content rightnav">
             {localStorage.teamName!=='null'?
-            <p>{`Team : ${localStorage.teamName}`}</p>
+            // <p>{`Team : ${localStorage.teamName}`}</p>
+            <p></p>
             :
-            <span onClick={()=>{window.location='/teamregister'}} className=' teamregister'>Create Team</span>
+            <div onClick={()=>{window.location='/teamregister'}} className=' teamregister'>Create Team</div>
             }
             <div onClick={signout} className="logout1">Logout</div>
             <div className="right">Leaderboard</div>
