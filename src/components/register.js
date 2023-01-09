@@ -103,7 +103,7 @@ const Register = () => {
     //   settoggle(true);
     // }
     try{
-      result=await axios.post("http://localhost:4000/users/team-register",
+      result=await axios.post("https://ecell-startin-backend.onrender.com/users/team-register",
      item,{
     headers:{
       "Content-Type":'application/json',
