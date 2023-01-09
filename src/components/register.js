@@ -7,13 +7,20 @@ import './register.css'
 import axios from 'axios';
 import * as Loader from 'react-loader-spinner';
 import { ToastContainer, toast } from 'react-toastify';
+import Dropdown from './Dropdown';
 import 'react-toastify/dist/ReactToastify.css';
 
+const data = [
+  { label: 'Food', id: 0 },
+  { label: 'Services', id: 1 },
+  { label: 'Others', id: 2 }
+];
 
 const Register = () => {
   const [membercount, setmembercount] = useState([{id: 0,name:null},{id: 1,name:null},{id: 2,name:null},{id: 3,name:null}])
   const [description,setdescription] = useState("")
   const [teamname,setteamname] = useState("")
+  const [category, setCategory] = useState(0);
   const [ct,setct]=useState(4)
   const [toggle,settoggle] = useState(true)
   const deleteitem=(itemId)=> {
@@ -22,6 +29,11 @@ const Register = () => {
     setmembercount((current) =>
     current.filter((membercount) =>  membercount.id!== itemId)
   );}
+
+    const handleChange = (e) => {
+      setCategory(e.target.value);
+    }
+
   const showToastMessage = (x) => {
     toast.success(`${x}`, {
         position: toast.POSITION.TOP_CENTER,
@@ -42,13 +54,35 @@ const Register = () => {
       temp.push(elm.name)
     })
     console.log(temp)
-    if(teamname!==""&&description!==""&& temp.length>=4){
+    let count = 0;
+    for(let i=0;i<temp.length;i++)
+    {
+      if(temp[i])
+        count++;
+    }
+    if(teamname!==""&&description!==""&& count>=4){
       settoggle(false)
     let item={teamName: teamname,description: description, members: temp};
     // const body = JSON.stringify(item);
     let result = {};
+    // let item_user = {username: membercount[0].name}
+    // try{
+    //   result = await axios.get("https://ecell-startin-backend.onrender.com/users/find-user-in-team",
+    //   item_user,{
+    //     headers:{
+    //       "Content-Type":'application/json',
+    //       "Accept":'application/json'
+    //     }}
+    //     )
+    // }
+    // catch(err)
+    // {
+    //   showToastMessage(err.response.data.message);
+    //   console.log(err);
+    //   settoggle(true);
+    // }
     try{
-      result=await axios.post("https://ecell-startin-backend.onrender.com/users/team-register",
+      result=await axios.post("http://localhost:4000/users/team-register",
      item,{
     headers:{
       "Content-Type":'application/json',
@@ -57,20 +91,20 @@ const Register = () => {
     )
     // result=await result.json();
     var x=result.data.message;
-    showToastMessage(x)
     settoggle(true)
+    showToastMessage(x)
     console.log(result);
     setTimeout(()=>{window.location='/dashboard'},3000)
   }catch(err){
     var g=err.response.data.message;
-    showToastMessage1(g)
     console.log(err);
     settoggle(true)
+    showToastMessage1(g)
   }
 }
   else{
-    showToastMessage1("Please fill all the field");
     settoggle(true)
+    showToastMessage1("Please fill all the field");
   }
 }
   const addmember=(e, id)=>{
@@ -112,12 +146,12 @@ const Register = () => {
             membercount.map((elm) =>{
               {/* console.log(elm.id) */}
               let y = elm.id;
-              let x = `member ${y}`;
+              let x = `member ${y+1}`;
               return(
                 <div className="lastname">
                 <label htmlFor="">username</label>
                 <div className='container'>
-                <input onChange={(e)=>addmember(e.target.value, elm.id)} type="text" placeholder={x}/>
+                <input onChange={(e)=>addmember(e.target.value, elm.id)} type="text" placeholder={elm.id===0?"Your Username":x}/>
                 <i className="far fa-trash-alt add-btn btn-delete" onClick={()=>{
                         deleteitem(elm.id);
                         // deletemember()
@@ -136,6 +170,7 @@ const Register = () => {
                 setct(ct+1)
               }          
             }}>Add Member</div>
+            {/* <Dropdown query={category} handleChange={handleChange} options={data} /> */}
             <div className='description'>
               <label htmlFor="">Description</label>
               <textarea value={description} onChange={(e)=>setdescription(e.target.value)} placeholder='give description about your shop'></textarea>

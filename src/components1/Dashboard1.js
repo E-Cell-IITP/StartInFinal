@@ -54,7 +54,11 @@ const Dashboard1 = () => {
         <div className="userlead">
             <span className="left">{zz}</span>
             <div className="rightlogout">
-            <span onClick={()=>{window.location='/teamregister'}} className=' teamregister'>Team Registration</span>
+            {localStorage.teamName!=='null'?
+            <p>{`Team : ${localStorage.teamName}`}</p>
+            :
+            <span onClick={()=>{window.location='/teamregister'}} className=' teamregister'>Create Team</span>
+            }
             <span onClick={signout} className="logout1">Logout</span>
             <span className="right">Leaderboard</span>
             </div>

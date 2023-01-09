@@ -52,11 +52,13 @@ const Login1 = () => {
     var y=result.data.data.username;
     // console.log(y);
     const z = result.data.message;
+    const k = result.data.data.teamName;
     console.log(z);
     settoggle(true);
     showToastMessage(z)
     localStorage.setItem('token',x);
     localStorage.setItem('username',y);
+    localStorage.setItem('teamName',k);
     setTimeout(() => {
       window.location='/dashboard'
     }, 3000);

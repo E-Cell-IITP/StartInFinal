@@ -62,8 +62,7 @@ export default function Router() {
     },
     {
       path:'/teamregister',
-      element: <Navigate to="/" />
-      // element:<Register/>
+      element:<Register/>
     },
     {
       path:'/outsideleaderboard',
