@@ -93,13 +93,12 @@ var FormData = require('form-data');
         let data = new FormData();
         data.append('image', e.target.files[0]);
         try{
-         await axios.post('https://api.imgur.com/3/upload',data, 
+         const result = await axios.post('https://api.imgur.com/3/upload',data, 
          {headers: { 
             'Authorization': 'Bearer 5eeae49394cd929e299785c8805bd168fc675280',
             'Content-Type' : 'multipart/form-data',
 
-          }}).then(result => console.log(result))
-          .catch(err => console.log(err))
+          }})
           console.log(result.data.data.link);
           let item = {token : localStorage.getItem('token'), link : result.data.data.link}
           const response = await axios.post('https://ecell-startin-backend.onrender.com/users/payment-detail',

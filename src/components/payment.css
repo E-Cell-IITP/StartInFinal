@@ -31,6 +31,11 @@
     color: white
 }
 
+.uploader{
+    color: white;
+}
+
+
 @media only screen and (max-width: 600px) {
     .loginboxbox2{
         justify-content: center;
