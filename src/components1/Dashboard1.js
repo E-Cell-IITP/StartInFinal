@@ -42,7 +42,7 @@ const Dashboard1 = () => {
     if(localStorage.teamName!=='null')
     {
       try{
-      const result = await axios.post("http://localhost:4000/users/get-team-from-token", item,
+      const result = await axios.post("https://ecell-startin-backend.onrender.com/users/get-team-from-token", item,
       {headers:{
         "Content-Type":'application/json',
         "Accept":'application/json',

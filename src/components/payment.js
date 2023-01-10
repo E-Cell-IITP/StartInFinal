@@ -114,9 +114,9 @@ var FormData = require('form-data');
           setTimeout(() => {
             window.location='/dashboard'
           }, 1500);
-        }catch{err=>{
+        }catch(err){
           showToastMessage1("Image not uploaded");
-        }}
+        }
         // basicUpload({
         //     accountId: "FW25awF",
         //     apiKey: "public_FW25awFBhDZhMzVWBDYaRuPTs4ne",
@@ -133,18 +133,21 @@ var FormData = require('form-data');
         //     console.log(response.fileUrl)},
         //   error => console.error(error)
         // );
-  
+  // showToastMessage("Image Uploaded Successfully");
+  // setTimeout(() => {
+  //   window.location='/dashboard'
+  // }, 1500);
 
   };
     return (
-      <div className='loginhead'>
+      <div className='loginhead2'>
         <div className='navcontain2'>
-         <div className="top1">
+         <div className="top10">
           <span onClick={()=>{window.location='/'}} className="headingis s1">Start-In</span>
          </div>
-         <div className="qrIm">
+         <div className="qrIm2">
          </div>
-         <div className="Ins">Upload the Screenshot of Payment to above QR</div>
+         <div className="Ins2">Upload the Screenshot of Payment to above QR</div>
         </div>
         <ToastContainer/>
         {toggle?
