@@ -128,14 +128,16 @@ var FormData = require('form-data');
   };
     return (
       <div className='loginhead'>
-        <div className='navcontain1'>
+        <div className='navcontain2'>
          <div className="top1">
           <span onClick={()=>{window.location='/'}} className="headingis s1">Start-In</span>
          </div>
+         <div className="qrIm">
+         </div>
+         <div className="Ins">Upload the Screenshot of Payment to above QR</div>
         </div>
         {toggle?
-        <div className="teamnamebox1">
-            <p>Total Amount: Rs. 200</p>
+        <div className="uploader">
             <input type="file" onChange={(e)=>handleUpload(e)}></input>
         </div>
         :
