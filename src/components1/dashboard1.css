@@ -53,6 +53,37 @@
     border-radius: 10px !important;
     text-align: right;
 }
+
+.payment{
+  background-color: #1B9CFC !important;
+  margin: 10px 10px 10px 20px;
+  padding: 4px 8px !important;
+  color: black;
+  cursor: pointer;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  /* font-family: ; */
+  width: 200px;
+  border-radius: 10px !important;
+  border: solid red 2px !important;
+  text-align: left;
+}
+.payment-success{
+  background-color: #1B9CFC !important;
+  margin: 10px 10px 10px 20px;
+  padding: 4px 8px !important;
+  color: black;
+  cursor: pointer;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  /* font-family: ; */
+  width: 200px;
+  border-radius: 10px !important;
+  border: solid green 2px !important;
+  text-align: left;
+}
+
+
 .left p{
     margin: 0px !important;
 }

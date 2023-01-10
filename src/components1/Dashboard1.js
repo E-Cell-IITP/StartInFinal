@@ -14,9 +14,14 @@ import elipimg2 from '../images/Ellipse\ 6.jpg'
 import elipimg3 from '../images/Ellipse\ 7.jpg'
 import Datatable from './Datatable';
 import Todayprofit from './Todayprofit';
+import axios from 'axios';
+import * as Loader from 'react-loader-spinner';
 
 
 const Dashboard1 = () => {
+  const [loading, setLoading] = useState(true);
+  const [paymentStatus, setPaymentStatus] = useState(false);
+  const [amount, setAmount] = useState(0);
   function useAuth() {
     return localStorage.getItem('username');
   }
@@ -32,10 +37,47 @@ const Dashboard1 = () => {
   else{
     initTodo=JSON.parse(localStorage.getItem('rows'));
   }
+  const getPaymentStatus = async () => {
+    let item = {'token' : localStorage.getItem('token')}
+    if(localStorage.teamName!=='null')
+    {
+      try{
+      const result = await axios.post("http://localhost:4000/users/get-team-from-token", item,
+      {headers:{
+        "Content-Type":'application/json',
+        "Accept":'application/json',
+      }}
+      );
+      console.log(result.data.data);
+      const dd = result.data.data;
+      if('imageUrl' in dd)
+      {
+        if(dd.imageUrl!==null)
+        {
+          setPaymentStatus(true);
+        }
+        else
+        {
+          setAmount(dd.members.length*50);
+        }
+      }
+      else
+      {
+        setAmount(dd.members.length*50);
+      }
+    }catch{(err)=>{
+      console.log(err);
+    }
+    }
+    }
+  }
   const [rows,setRows]=useState(initTodo);
   useEffect(()=>{
     localStorage.setItem('rows',JSON.stringify(rows));
   },[rows])
+  useEffect(()=>{
+    getPaymentStatus();
+  },[])
   const callingtodayprofit=(e)=>{
     // e.preventDefault();
     // <Todayprofit rows={rows} createData={createData} setRows={setRows}/>
@@ -76,6 +118,22 @@ const Dashboard1 = () => {
       <div className="topheading">
       
         <span className='head'>Dashboard</span>
+      </div>
+      <div>
+        {
+          localStorage.teamName!=='null'?
+          !paymentStatus
+          ?amount===0?
+          <div style={{ display: "flex", justifyContent: "center" }}>
+          <Loader.Puff
+            color="#00BFFF"
+            height={50}
+            width={50}
+          /></div>
+          :<div onClick={()=>{window.location='/payment'}} className=' payment'>{`Pay Amount: ${amount}`}</div>
+          :<div className='payment-success'>Payment Successful! All set for StartIn!!</div>
+          :<div></div>
+        }
       </div>
       <div className="pic">
         <div className="p1">

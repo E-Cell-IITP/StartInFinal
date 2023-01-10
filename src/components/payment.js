@@ -73,19 +73,33 @@ var FormData = require('form-data');
     const [category, setCategory] = useState(0);
     const [toggle,settoggle] = useState(true)
   
+    const showToastMessage = (x) => {
+      toast.success(`${x}`, {
+          position: toast.POSITION.TOP_CENTER,
+          className:'message_toast'
+        });
+  };
+    const showToastMessage1 = (x) => {
+      toast.error(`${x}`, {
+          position: toast.POSITION.TOP_CENTER,
+          className:'message_toast'
+        });
+      }
     const handleUpload = async (e) =>{
         // e.target.value
+        // showToastMessage("Hi");
         console.log(e.target.files[0])
         const file = e.target.files[0];
         let data = new FormData();
         data.append('image', e.target.files[0]);
-
-         const result =  await axios.post('https://api.imgur.com/3/upload',data, 
+        try{
+         await axios.post('https://api.imgur.com/3/upload',data, 
          {headers: { 
             'Authorization': 'Bearer 5eeae49394cd929e299785c8805bd168fc675280',
             'Content-Type' : 'multipart/form-data',
 
-          }});
+          }}).then(result => console.log(result))
+          .catch(err => console.log(err))
           console.log(result.data.data.link);
           let item = {token : localStorage.getItem('token'), link : result.data.data.link}
           const response = await axios.post('https://ecell-startin-backend.onrender.com/users/payment-detail',
@@ -96,6 +110,13 @@ var FormData = require('form-data');
           }}
           )
           console.log(response);
+          showToastMessage(response.data.message);
+          setTimeout(() => {
+            window.location='/dashboard'
+          }, 1500);
+        }catch{err=>{
+          showToastMessage1("Image not uploaded");
+        }}
         // basicUpload({
         //     accountId: "FW25awF",
         //     apiKey: "public_FW25awFBhDZhMzVWBDYaRuPTs4ne",
@@ -112,19 +133,8 @@ var FormData = require('form-data');
         //     console.log(response.fileUrl)},
         //   error => console.error(error)
         // );
-    }
+  
 
-    const showToastMessage = (x) => {
-      toast.success(`${x}`, {
-          position: toast.POSITION.TOP_CENTER,
-          className:'message_toast'
-        });
-  };
-    const showToastMessage1 = (x) => {
-      toast.error(`${x}`, {
-          position: toast.POSITION.TOP_CENTER,
-          className:'message_toast'
-        });
   };
     return (
       <div className='loginhead'>
@@ -133,6 +143,7 @@ var FormData = require('form-data');
           <span onClick={()=>{window.location='/'}} className="headingis s1">Start-In</span>
          </div>
         </div>
+        <ToastContainer/>
         {toggle?
         <div className="teamnamebox1">
             <p>Total Amount: Rs. 200</p>
