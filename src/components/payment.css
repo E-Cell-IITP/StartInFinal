@@ -1,0 +1,33 @@
+.body{
+    background-image: radial-gradient(white,black);
+}
+.loginhead{
+    display: flex;
+    flex-direction: column;
+    height: 780px;
+    width: 1519px;
+}
+.navcontain2{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 35%;
+    height: 700px;
+}
+.qrIm{
+    margin: 2px;
+    display: flex;
+    height: 518px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 19px;
+    background-image: url("QR.jpeg");
+}
+.Ins{
+    margin: 16px;
+    padding: 12px;
+    font-size: 18px;
+    width: 100%;
+    font-family: "Cosmic Sans MS";
+    text-align: center
+}
